@@ -1,0 +1,6 @@
+UID,GEOID,Geography_Name,Total_Pop,Urban_Pop,Inside_Urban_Area,Inside_Urban_Cluster,Rural_Pop,Not_Defined
+1400000US01001020100,1001020100,"Census Tract 201, Autauga County, Alabama",1912,1594,1594,0,318,0
+1400000US01001020200,1001020200,"Census Tract 202, Autauga County, Alabama",2170,2170,2170,0,0,0
+1400000US01001020300,1001020300,"Census Tract 203, Autauga County, Alabama",3373,3373,3373,0,0,0
+1400000US01001020400,1001020400,"Census Tract 204, Autauga County, Alabama",4386,4386,4386,0,0,0
+1400000US01001020500,1001020500,"Census Tract 205, Autauga County, Alabama",10766,10762,10762,0,4,0
