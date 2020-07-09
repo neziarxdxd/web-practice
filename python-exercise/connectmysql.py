@@ -1,11 +1,8 @@
 import mysql.connector
 import pandas as pd
 
-
 class DBAmerica:
   def __init__(self):
-    
-
     config = {
       'user': 'root',
       'password': '',
@@ -19,18 +16,21 @@ class DBAmerica:
       print("Connected to Database")
     except:
       print("The port is not open")
-  def insertDataToTbl(self,dma,country):
-    sql = "INSERT INTO tbl_countries (dma,countries) VALUES (%s, %s)"
-    data = (dma,country)
-    self.mycursor.execute(sql,data)
-    self.mydb.commit()
- 
+  def insertDataToTable(self,dma,country):
+    try:
+      sql = "INSERT INTO tbl_countries (dma,countries) VALUES (%s, %s)"
+      data = (dma,country)
+      self.mycursor.execute(sql,data)
+      self.mydb.commit()
+      print("Inserted Data")
+    except:
+      print("Check for the error")
  
 dbAmerica = DBAmerica()
 dma_counties = pd.read_csv('dm_america.csv', encoding = "ISO-8859-1")
 x =dma_counties.values
 for i in x:
-  dbAmerica.insertDataToTbl(*i)
+  dbAmerica.insertDataToTable(*i)
   
 
 
