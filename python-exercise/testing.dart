@@ -1,7 +1,11 @@
 import 'dart:io';
 
 main() {
-  repeat();
+  int x = 10;
+  while (x > 0) {
+    print("Hello");
+    x++;
+  }
 }
 
 repeat() {
