@@ -25,12 +25,38 @@ class DBAmerica:
       print("Inserted Data")
     except:
       print("Check for the error")
+
+  def insertDataToCensus(self,UID,
+  GEOID,
+  Geography_Name,Total_Pop,
+  Urban_Pop,
+  Inside_Urban_Area,
+  Inside_Urban_Cluster,
+  Rural_Pop,
+  Not_Defined
+):
+    try:
+      sql = "INSERT INTO `tbl_census_sf_urban_rural`(`UID`, `GEOID`, `Geography_Name`, `Total_Pop`, `Urban_Pop`, `Inside_Urban_Area`, `Inside_Urban_Cluster`, `Rural_Pop`, `Not_Defined`) VALUES (%s, %s,%s,%s,%s,%s,%s,%s,%s)"
+      data = (UID,
+  GEOID,
+  Geography_Name,Total_Pop,
+  Urban_Pop,
+  Inside_Urban_Area,
+  Inside_Urban_Cluster,
+  Rural_Pop,
+  Not_Defined)
+      self.mycursor.execute(sql,data)
+      self.mydb.commit()
+      print("Inserted Data")
+    except:
+      print("gfdf")
  
 dbAmerica = DBAmerica()
-dma_counties = pd.read_csv('dm_america.csv', encoding = "ISO-8859-1")
-x =dma_counties.values
-for i in x:
-  dbAmerica.insertDataToTable(*i)
+sample_data = pd.read_csv('CENSUS_2010_SF1_Urban_Rural_by_Geo.csv', encoding = "ISO-8859-1")
+samples =sample_data.values
+print(len(samples))
+
+  
   
 
 
