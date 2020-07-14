@@ -52,7 +52,7 @@ class DBAmerica:
       print("gfdf")
  
 dbAmerica = DBAmerica()
-sample_data = pd.read_csv('sample_data_census.csv', encoding = "ISO-8859-1")
+sample_data = pd.read_csv('CENSUS_2010_SF1_Urban_Rural_by_Geo.csv', encoding = "ISO-8859-1")
 samples =sample_data.values
 for sample in samples:
   dbAmerica.insertDataToCensus(*sample)
